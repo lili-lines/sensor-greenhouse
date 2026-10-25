@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" width="1200" height="880" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <style>.on{paint-order:stroke;stroke:#163a1c;stroke-width:4px;stroke-linejoin:round}</style>
+    <pattern id="holes" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#3a7d44"/>
+      <circle cx="6" cy="6" r="2.2" fill="#c9a227"/>
+    </pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#57606a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="880" fill="#ffffff"/>
+  <text x="40" y="45" font-size="24" font-weight="700" fill="#1f2328">Nœud température / humidité LoRa</text>
+  <text x="1160" y="45" font-size="14" fill="#57606a" text-anchor="end">Les numéros renvoient à doc/BOM.md</text>
+
+  <!-- ============ VUE D'ENSEMBLE ============ -->
+  <rect x="20" y="70" width="540" height="730" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="40" y="100" font-size="17" font-weight="700" fill="#1f2328">Dans la serre</text>
+
+  <!-- toit raspa y amagado -->
+  <polyline points="30,175 140,135 250,175 360,135 470,175 550,145" fill="none" stroke="#9ec5e8" stroke-width="4"/>
+  <text x="470" y="128" font-size="12" fill="#57606a" text-anchor="middle">plastique</text>
+
+  <!-- sol -->
+  <rect x="30" y="760" width="520" height="30" fill="#e8d9c0"/>
+  <line x1="30" y1="760" x2="550" y2="760" stroke="#a07c4a" stroke-width="2"/>
+
+  <!-- plants de tomate -->
+  <g stroke="#2f7d32" stroke-width="4">
+    <line x1="75" y1="760" x2="75" y2="300"/>
+    <line x1="150" y1="760" x2="150" y2="320"/>
+  </g>
+  <g fill="#57a85b">
+    <ellipse cx="60" cy="320" rx="20" ry="9"/><ellipse cx="92" cy="370" rx="20" ry="9"/>
+    <ellipse cx="58" cy="430" rx="20" ry="9"/><ellipse cx="92" cy="490" rx="20" ry="9"/>
+    <ellipse cx="58" cy="550" rx="20" ry="9"/><ellipse cx="92" cy="610" rx="20" ry="9"/>
+    <ellipse cx="58" cy="670" rx="20" ry="9"/>
+    <ellipse cx="166" cy="340" rx="20" ry="9"/><ellipse cx="134" cy="400" rx="20" ry="9"/>
+    <ellipse cx="168" cy="460" rx="20" ry="9"/><ellipse cx="134" cy="520" rx="20" ry="9"/>
+    <ellipse cx="168" cy="580" rx="20" ry="9"/><ellipse cx="134" cy="640" rx="20" ry="9"/>
+  </g>
+  <g fill="#d73a31">
+    <circle cx="82" cy="455" r="7"/><circle cx="70" cy="515" r="7"/><circle cx="84" cy="580" r="7"/>
+    <circle cx="143" cy="430" r="7"/><circle cx="158" cy="545" r="7"/><circle cx="145" cy="600" r="7"/>
+  </g>
+
+  <!-- poteau -->
+  <rect x="255" y="200" width="10" height="560" fill="#8c959f"/>
+
+  <!-- panneau solaire (4) -->
+  <g transform="rotate(-20 260 215)">
+    <rect x="200" y="190" width="120" height="55" fill="#1f3a68" stroke="#0d1b33" stroke-width="2"/>
+    <g stroke="#4a6fa5" stroke-width="1">
+      <line x1="230" y1="190" x2="230" y2="245"/><line x1="260" y1="190" x2="260" y2="245"/>
+      <line x1="290" y1="190" x2="290" y2="245"/><line x1="200" y1="217" x2="320" y2="217"/>
+    </g>
+  </g>
+  <text x="340" y="205" font-size="14" fill="#1f2328"><tspan font-weight="700">④</tspan> Panneau solaire 6 V</text>
+
+  <!-- abri anti-rayonnement (10) + capteur (3) -->
+  <rect x="265" y="378" width="70" height="6" fill="#8c959f"/>
+  <g fill="#ffffff" stroke="#8c959f" stroke-width="2">
+    <path d="M318 336 L402 336 L392 346 L328 346 Z"/>
+    <path d="M322 352 L398 352 L390 360 L330 360 Z"/>
+    <path d="M322 366 L398 366 L390 374 L330 374 Z"/>
+    <path d="M322 380 L398 380 L390 388 L330 388 Z"/>
+    <path d="M322 394 L398 394 L390 402 L330 402 Z"/>
+    <path d="M322 408 L398 408 L390 416 L330 416 Z"/>
+  </g>
+  <rect x="352" y="368" width="16" height="12" fill="#1f2328"/>
+  <text x="412" y="362" font-size="14" fill="#1f2328"><tspan font-weight="700">③</tspan> SHT45</text>
+  <text x="412" y="380" font-size="14" fill="#1f2328">dans l'abri <tspan font-weight="700">⑩</tspan></text>
+  <text x="412" y="398" font-size="12" fill="#57606a">(coupelles 3D)</text>
+
+  <!-- câbles -->
+  <path d="M248 248 C 232 320 192 480 192 590 Q 192 640 226 632" fill="none" stroke="#24292f" stroke-width="3"/>
+  <path d="M360 418 C 362 540 310 660 276 632" fill="none" stroke="#bf8700" stroke-width="3"/>
+  <text x="335" y="520" font-size="12" fill="#57606a">câble capteur</text>
+
+  <!-- boîtier IP65 (9) + antenne (2) -->
+  <rect x="286" y="462" width="7" height="62" rx="3" fill="#24292f"/>
+  <text x="302" y="478" font-size="13" fill="#1f2328"><tspan font-weight="700">②</tspan> antenne LoRa</text>
+  <rect x="205" y="520" width="110" height="98" rx="8" fill="#c9d1d9" stroke="#57606a" stroke-width="2"/>
+  <rect x="220" y="618" width="12" height="12" fill="#8c959f"/>
+  <rect x="270" y="618" width="12" height="12" fill="#8c959f"/>
+  <text x="260" y="565" font-size="13" font-weight="700" fill="#1f2328" text-anchor="middle">IP65</text>
+  <text x="260" y="583" font-size="11" fill="#57606a" text-anchor="middle">voir détail →</text>
+  <text x="330" y="590" font-size="14" fill="#1f2328"><tspan font-weight="700">⑨</tspan> Boîtier IP65</text>
+  <text x="330" y="608" font-size="12" fill="#57606a">électronique + batterie, à l'ombre</text>
+
+  <!-- hauteur réglable -->
+  <line x1="520" y1="752" x2="520" y2="392" stroke="#57606a" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="510" y="700" font-size="12" fill="#57606a" text-anchor="end">capteur à hauteur de culture,</text>
+  <text x="510" y="716" font-size="12" fill="#57606a" text-anchor="end">remonté avec les plants (2–3 m)</text>
+
+  <!-- ============ INTÉRIEUR DU BOÎTIER ============ -->
+  <rect x="580" y="70" width="600" height="730" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="600" y="100" font-size="17" font-weight="700" fill="#1f2328">Intérieur du boîtier IP65</text>
+
+  <!-- antenne sortant par le haut -->
+  <rect x="1095" y="80" width="10" height="50" rx="5" fill="#24292f"/>
+  <rect x="1091" y="124" width="18" height="10" fill="#c9a227"/>
+  <text x="1085" y="100" font-size="13" fill="#1f2328" text-anchor="end"><tspan font-weight="700">②</tspan> antenne (SMA)</text>
+
+  <rect x="610" y="130" width="540" height="560" rx="18" fill="#eaeef2" stroke="#57606a" stroke-width="3"/>
+
+  <!-- perfboard (8a) -->
+  <rect x="640" y="160" width="480" height="300" rx="4" fill="url(#holes)" stroke="#2a5c32" stroke-width="2"/>
+
+  <!-- borniers (8b) -->
+  <rect x="650" y="200" width="28" height="48" rx="3" fill="#1e6fd9"/>
+  <rect x="650" y="290" width="28" height="48" rx="3" fill="#1e6fd9"/>
+  <text class="on" x="686" y="220" font-size="12" fill="#ffffff" font-weight="700">⑧ bornier</text>
+  <text class="on" x="686" y="236" font-size="12" fill="#ffffff">panneau</text>
+  <text class="on" x="686" y="310" font-size="12" fill="#ffffff" font-weight="700">⑧ bornier</text>
+  <text class="on" x="686" y="326" font-size="12" fill="#ffffff">batterie</text>
+
+  <!-- CN3065 (5) -->
+  <rect x="660" y="368" width="96" height="62" rx="4" fill="#1565c0" stroke="#0d3c7a"/>
+  <text class="on" x="708" y="396" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">⑤ CN3065</text>
+  <text class="on" x="708" y="413" font-size="11" fill="#ffffff" text-anchor="middle">chargeur</text>
+
+  <!-- XIAO (1) -->
+  <rect x="815" y="188" width="40" height="18" rx="3" fill="#9aa0a6"/>
+  <rect x="790" y="200" width="90" height="110" rx="6" fill="#111111"/>
+  <rect x="800" y="222" width="70" height="72" rx="3" fill="#c0c4c8"/>
+  <text x="835" y="262" font-size="11" fill="#1f2328" text-anchor="middle">XIAO</text>
+  <text class="on" x="835" y="332" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">① XIAO ESP32-C3</text>
+
+  <!-- Wio-E5 mini (2) -->
+  <rect x="920" y="200" width="180" height="80" rx="5" fill="#111111"/>
+  <rect x="985" y="214" width="52" height="52" rx="3" fill="#c0c4c8"/>
+  <text x="1011" y="244" font-size="10" fill="#1f2328" text-anchor="middle">Wio-E5</text>
+  <rect x="1100" y="230" width="16" height="20" fill="#c9a227"/>
+  <path d="M1116 240 C 1135 240 1100 180 1100 134" fill="none" stroke="#24292f" stroke-width="2.5"/>
+  <text class="on" x="1010" y="300" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">② Wio-E5 mini</text>
+
+  <!-- UART -->
+  <line x1="880" y1="232" x2="920" y2="232" stroke="#ffd33d" stroke-width="3"/>
+  <line x1="880" y1="246" x2="920" y2="246" stroke="#ff8c00" stroke-width="3"/>
+  <text class="on" x="900" y="225" font-size="10" fill="#ffffff" text-anchor="middle">UART</text>
+
+  <!-- résistances (7) -->
+  <g>
+    <line x1="790" y1="372" x2="850" y2="372" stroke="#c0c4c8" stroke-width="2"/>
+    <rect x="802" y="366" width="36" height="12" rx="5" fill="#e8d3a9"/>
+    <rect x="808" y="366" width="3" height="12" fill="#d73a31"/><rect x="815" y="366" width="3" height="12" fill="#d73a31"/><rect x="822" y="366" width="3" height="12" fill="#c9a227"/>
+    <line x1="790" y1="396" x2="850" y2="396" stroke="#c0c4c8" stroke-width="2"/>
+    <rect x="802" y="390" width="36" height="12" rx="5" fill="#e8d3a9"/>
+    <rect x="808" y="390" width="3" height="12" fill="#d73a31"/><rect x="815" y="390" width="3" height="12" fill="#d73a31"/><rect x="822" y="390" width="3" height="12" fill="#c9a227"/>
+  </g>
+  <text class="on" x="860" y="380" font-size="12" fill="#ffffff" font-weight="700">⑦ pont diviseur</text>
+  <text class="on" x="860" y="396" font-size="11" fill="#ffffff">(tension batterie)</text>
+
+  <!-- connecteur JST capteur (8c) + I2C -->
+  <path d="M880 300 L 905 300 L 905 345 L 1050 345 L 1050 400" fill="none" stroke="#bf8700" stroke-width="3"/>
+  <text class="on" x="975" y="338" font-size="11" fill="#ffffff" text-anchor="middle">I2C + 3V3</text>
+  <rect x="1036" y="400" width="30" height="20" rx="2" fill="#f0f0f0" stroke="#8c959f"/>
+  <text class="on" x="1110" y="440" font-size="12" fill="#ffffff" text-anchor="end" font-weight="700">⑧ JST capteur</text>
+
+  <!-- alimentation -->
+  <path d="M678 224 L 700 224 L 700 368" fill="none" stroke="#d73a31" stroke-width="3"/>
+  <path d="M756 400 L 775 400 L 775 314 L 678 314" fill="none" stroke="#d73a31" stroke-width="3"/>
+  <path d="M775 300 L 790 300" fill="none" stroke="#d73a31" stroke-width="3"/>
+  <text class="on" x="1110" y="180" font-size="11" fill="#ffffff" text-anchor="end">carte soudée + vernie (sauf capteur)</text>
+
+  <!-- batterie 18650 (6) -->
+  <rect x="660" y="500" width="260" height="70" rx="8" fill="#24292f"/>
+  <rect x="672" y="510" width="236" height="50" rx="25" fill="#1e88e5"/>
+  <text class="on" x="790" y="541" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="700">18650 · 3,7 V · 3000 mAh</text>
+  <text x="790" y="594" font-size="14" fill="#1f2328" text-anchor="middle"><tspan font-weight="700">⑥</tspan> batterie protégée</text>
+  <path d="M660 530 C 628 500 628 330 650 316" fill="none" stroke="#d73a31" stroke-width="3"/>
+
+  <!-- presse-étoupes (9) + câbles entrants -->
+  <rect x="690" y="690" width="22" height="18" fill="#8c959f"/><rect x="686" y="708" width="30" height="8" fill="#57606a"/>
+  <rect x="1000" y="690" width="22" height="18" fill="#8c959f"/><rect x="996" y="708" width="30" height="8" fill="#57606a"/>
+  <path d="M701 690 C 701 640 624 610 624 470 C 624 300 628 236 650 224" fill="none" stroke="#24292f" stroke-width="3"/>
+  <path d="M1011 690 C 1011 600 1051 520 1051 420" fill="none" stroke="#bf8700" stroke-width="3"/>
+  <line x1="701" y1="716" x2="701" y2="760" stroke="#24292f" stroke-width="3"/>
+  <line x1="1011" y1="716" x2="1011" y2="760" stroke="#bf8700" stroke-width="3"/>
+  <text x="701" y="780" font-size="12" fill="#1f2328" text-anchor="middle">vers le panneau ④</text>
+  <text x="1011" y="780" font-size="12" fill="#1f2328" text-anchor="middle">vers le SHT45 ③</text>
+  <text x="856" y="740" font-size="14" fill="#1f2328" text-anchor="middle"><tspan font-weight="700">⑨</tspan> presse-étoupes</text>
+
+  <!-- ============ CHAÎNE ============ -->
+  <text x="600" y="840" font-size="15" fill="#1f2328" text-anchor="middle">
+    Panneau ④ → CN3065 ⑤ → batterie ⑥ → XIAO ① (3V3) → SHT45 ③ + Wio-E5 ② → radio LoRa → passerelle ou récepteur
+  </text>
+</svg>

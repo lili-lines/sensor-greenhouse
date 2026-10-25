@@ -10,11 +10,13 @@ Nœud autonome (solaire + batterie) pour serres plastique type *raspa y amagado*
 
 Liste détaillée avec photos, noms anglais / chinois et références d'achat : [doc/BOM.md](doc/BOM.md).
 
+![Schéma du nœud : vue dans la serre et intérieur du boîtier](doc/img/noeud-schema.svg)
+
 | # | Composant | Qté | Prix estimé | Rôle | Link |
 |---|-----------|----:|------------:|------|---|
-| 1 | Seeed XIAO ESP32-C3 | 1 | NT$180 | MCU, deep sleep, régulateur 3,3 V intégré | https://shopee.tw/%E3%80%90%E7%91%AA%E5%8F%AF%E5%B8%8C%E7%B6%AD%E3%80%91ESP32-C3-XIAO-Seeed-Studio%EF%BD%9C%E7%8F%BE%E8%B2%A8%E7%99%BC%E7%A5%A8%EF%BD%9CESP32-%E9%96%8B%E7%99%BC%E6%9D%BF-Wifi-%E8%97%8D%E8%8A%BD-i.656213378.50604383285?extraParams=%7B%22display_model_id%22%3A376396848960%2C%22model_selection_logic%22%3A3%7D&image_ids=sg-11134201-8262k-mj9sxg5j0u821c |
+| 1 | Seeed XIAO ESP32-C3 | 1 | NT$150 | MCU, deep sleep, régulateur 3,3 V intégré | Guanghua Electronic Plaza |
 | 2 | Seeed LoRa-E5 mini (STM32WLE5JC), antenne EU868/US915 incluse | 1 | NT$700 | Radio LoRaWAN, firmware AT d'usine (EU868 / AS923…) | https://shopee.tw/%E3%80%90%E7%91%AA%E5%8F%AF%E5%B8%8C%E7%B6%AD%E3%80%91Seeed-Studio-Wio-E5-mini-STM32WLE5-%E9%96%8B%E7%99%BC%E6%9D%BF%EF%BD%9C%E7%8F%BE%E8%B2%A8%E7%99%BC%E7%A5%A8%EF%BD%9CLoRa-STM32-i.656213378.44968699955?extraParams=%7B%22display_model_id%22%3A416568324128%2C%22model_selection_logic%22%3A3%7D&image_ids=sg-11134201-82588-mtta77q1kemf34 |
-| 3 | Module SHT45 avec filtre PTFE | 1 | NT$450 | Température ±0,1 °C / humidité ±1 %, heater anti-condensation | https://shopee.tw/%E3%80%90HappyGo-Mart%E3%80%91-5665-SHT45-%E9%AB%98%E7%B2%BE%E5%AF%86%E6%BA%AB%E5%BA%A6%E5%92%8C%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%AC%E5%99%A8-%E7%9B%B8%E5%AE%B9%E6%96%BC-STEMMA-QT-Qwiic-i.555888.44567245055?extraParams=%7B%22display_model_id%22%3A436459537520%2C%22model_selection_logic%22%3A3%7D&image_ids=sg-11134202-8257v-msmha3gfyn0n3c |
+| 3 | Module SHT45 avec filtre PTFE | 1 | NT$489 | Température ±0,1 °C / humidité ±1 %, heater anti-condensation | https://www.digikey.tw/zh/products/detail/adafruit-industries-llc/6174/25981346 |
 | 4 | Panneau solaire 6 V 1–2 W | 1 | NT$120 | Source principale |
 | 5 | Chargeur solaire CN3065 | 1 | NT$60 | Charge batterie |
 | 6 | Batterie Li-ion 18650 3000 mAh protégée + support | 1 | NT$250 | Stockage énergie |
@@ -78,7 +80,21 @@ Pour un prototype ou une seule exploitation : pas de passerelle ni de serveur Lo
 Nœuds (XIAO + LoRa-E5 mini) ──LoRa──► LoRa-E5 mini (USB) ──► Raspberry Pi : script Python ──► MQTT (Mosquitto) ──► Node-RED / InfluxDB
 ```
 
-**Matériel en plus** : 1 LoRa-E5 mini (≈ NT$700) + son antenne, 1 câble USB-C (fourni), 1 Raspberry Pi ou PC existant.
+**Matériel en plus (station de réception, une seule pour tous les nœuds)** :
+
+| # | English | 中文（台灣） | Qté | Prix | Remarque |
+|---|---------|--------------|----:|-----:|----------|
+| R1 | Seeed Studio Wio-E5 mini (antenne EU868/US915 + câble USB-C inclus) | Wio-E5 mini LoRaWAN 開發板 | 1 | NT$765 ¹ | Même carte que sur les nœuds, garde son firmware AT |
+| R2 | Raspberry Pi 4 Model B, 2 GB | 樹莓派 4 Model B 2GB | 1 | ≈ NT$1 600 | Fait tourner récepteur + Mosquitto + Node-RED + InfluxDB. Inutile si un PC allumé en permanence fait déjà broker |
+| R3 | Official Raspberry Pi USB-C power supply 5 V 3 A | 樹莓派 4 官方電源供應器 5V 3A | 1 | ≈ NT$300 | Un chargeur de téléphone fait souvent chuter la tension |
+| R4 | microSD card 32 GB, A1 / Class 10 | microSD 記憶卡 32GB A1 | 1 | ≈ NT$200 | Raspberry Pi OS Lite |
+| R5 | Raspberry Pi 4 case | 樹莓派 4 外殼 | 1 | ≈ NT$150 | — |
+| R6 | SMA extension cable, 1–3 m (optionnel) | SMA 延長線 公對母 1–3m | 1 | ≈ NT$150 | Pour placer l'antenne en hauteur, au-dessus des cultures |
+| | | | | **≈ NT$3 150** | **≈ NT$765** avec un PC existant |
+
+¹ Prix relevé sur Shopee (octobre 2026). Les autres sont estimés, à vérifier.
+
+Pour la réception seule (le broker et Node-RED restent sur un autre PC), un **Raspberry Pi Zero 2 W** (樹莓派 Zero 2 W, ≈ NT$650) suffit, avec un adaptateur USB-C → micro-USB OTG (OTG 轉接頭).
 
 **Compromis** : pas de chiffrement, pas d'adaptation automatique du débit, pas de réseau public, collisions possibles entre nœuds. Acceptable pour un prototype.
 
