@@ -6,7 +6,7 @@ Liste des pièces d'un nœud, avec les noms en anglais et en chinois traditionne
 
 | # | Photo | English | 中文（台灣） | Qté | Prix/u | Où / référence |
 |---|-------|---------|--------------|----:|-----:|----------------|
-| 1 | <img src="img/xiao-esp32c3.jpg" width="120"> | Seeed Studio XIAO ESP32-C3 | XIAO ESP32-C3 開發板 | 3 | NT$150 | [Shopee](https://shopee.tw/product/656213378/50604383285), option « Have Welding » (排針已焊接) |
+| 1 | <img src="img/xiao-esp32c3.jpg" width="120"> | Seeed Studio XIAO ESP32-C3 | XIAO ESP32-C3 開發板 | 3 | NT$150 | Guanghua Electronic Plaza |
 | 2 | <img src="img/wio-e5-mini.jpg" width="120"> | Seeed Studio Wio-E5 mini (ex-LoRa-E5 mini, STM32WLE5JC), antenne EU868/US915 incluse | Wio-E5 mini LoRaWAN 開發板（STM32WLE5JC） | 3 | NT$765 | [Shopee](https://shopee.tw/product/10207300/17538315042) |
 | 3 | <img src="img/sht45-adafruit.jpg" width="120"> | Adafruit SHT45 Temperature & Humidity Sensor **with PTFE** (puce SHT45-AD1F) - Adafruit 6174 (SHT45 avec PTFE) | SHT45 溫濕度感測器模組（含 PTFE 濾膜） | 3 | NT$492 | DigiKey `1528-6174-ND` (Adafruit **6174**). ⚠️ Adafruit 5665 = version **sans** filtre |
 | 4 | <img src="img/panneau-solaire.jpg" width="120"> | 6 V 1–2 W monocrystalline solar panel (laminated) | 6V 1–2W 單晶矽太陽能板（層壓） | 1 | NT$ | Vérifier la tension à vide (開路電壓) vs l'entrée max du CN3065 |
